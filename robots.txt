@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+Host: ddconline.in
+Sitemap: https://ddconline.in/sitemap.xml

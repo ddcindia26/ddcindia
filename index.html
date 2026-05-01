@@ -1,0 +1,1444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DDC | Construction Company in Bihar</title>
+
+<meta name="description" content="Durable Design & Constructions - Modern architecture and construction solutions. Durable Design & Constructions offers house construction, interior design, and renovation services in Bihar. Affordable and reliable.">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+:root{
+    --primary:#d60000;
+    --dark:#111;
+    --light:#fff;
+    --gray:#e0e0e0;
+    --text:#333;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins', sans-serif;
+    scroll-behavior:smooth;
+}
+
+body{
+    background:var(--light);
+    color:var(--text);
+}
+
+
+/* ================= LOADER ================= */
+#loader{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100vh;
+    background:#111;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    flex-direction:column;
+    z-index:9999;
+    color:#fff;
+}
+
+.loader-box{
+    text-align:center;
+}
+
+.circle{
+    width:45px;
+    height:45px;
+    border:3px solid #333;
+    border-top:3px solid var(--primary);
+    border-radius:50%;
+    animation:spin 1s linear infinite;
+    margin-bottom:15px;
+}
+
+@keyframes spin{
+    0%{transform:rotate(0deg);}
+    100%{transform:rotate(360deg);}
+}
+
+#loader.hide{
+    opacity:0;
+    visibility:hidden;
+    transition:0.6s ease;
+}
+
+/* ================= HEADER ================= */
+header{
+    position:relative;
+    top:0;
+    z-index:1000;
+    background:#fff;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:25px 50px;
+    border-bottom:1px solid #eee;
+}
+
+/* .logo-img{height:119px;} */
+.logo-img{
+    height:119px;
+    transition:0.3s ease;
+    cursor:pointer;
+}
+
+/* HOVER EFFECT */
+.logo-img:hover{
+    transform:scale(1.05) translateY(-3px);
+    filter:drop-shadow(0 10px 25px rgba(100,100,100,0.25));
+}
+
+
+nav{
+    display:flex;
+    align-items:center;
+}
+
+nav a{
+    margin:0 15px;
+    text-decoration:none;
+    color:#333;
+    font-weight:500;
+    position:relative;
+    text-shadow:0 1px 2px rgba(0,0,0,0.15);
+    transition:0.3s;
+}
+
+nav a:hover{
+    color:var(--primary);
+    transform:translateY(-3px);
+    text-shadow:0 4px 10px rgba(0,0,0,0.3);
+}
+
+
+nav a::after{
+    content:"";
+    position:absolute;
+    left:0;
+    bottom:-5px;
+    height:2px;
+    width:0;
+    background:var(--primary);
+    transition:.3s;
+}
+
+nav a:hover::after{width:100%;}
+
+.menu-toggle{
+    display:none;
+    font-size:22px;
+    cursor:pointer;
+}
+
+/* ================= HERO ================= */
+.hero{
+    height:89vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    color:#fff;
+ /*   background: */
+ /*   linear-gradient(to right, rgba(0,0,0,0.85), rgba(0,0,0,0.4)), */
+  /*  url('couple.jpg');*/
+    background-size:cover;
+    background-position:center;
+}
+
+/* HERO TEXT SHADOW */
+.hero h1{
+    font-size:52px;
+    text-shadow:0 3px 10px rgba(0,0,0,0.5);
+    transition:0.3s;
+}
+
+.hero p{
+    font-size:18px;
+    margin:15px 0;
+    text-shadow:0 2px 6px rgba(0,0,0,0.4);
+    transition:0.3s;
+}
+
+/* TEXT HOVER EFFECT */
+.hero h1:hover{
+    transform:translateY(-5px);
+    text-shadow:0 6px 18px rgba(0,0,0,0.7);
+}
+
+.hero p:hover{
+    transform:translateY(-3px);
+    text-shadow:0 4px 12px rgba(0,0,0,0.6);
+}
+
+.btn{
+    padding:12px 25px;
+    border:none;
+    border-radius:6px;
+    cursor:pointer;
+    font-weight:500;
+}
+
+.btn-primary{
+    background:var(--primary);
+    color:#fff;
+    transition:0.3s;
+    box-shadow:0 4px 12px rgba(0,0,0,0.2);
+}
+
+.btn-primary:hover{
+    transform:translateY(-5px) scale(1.05);
+    box-shadow:0 8px 25px rgba(0,0,0,0.35);
+    background:#b80000;
+}
+
+
+/* VIDEO BACKGROUND */
+.hero{
+    position:relative;
+    overflow:hidden;
+}
+
+/* video fills hero */
+.hero-video{
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    z-index:-2;
+    pointer-events:none;
+}
+
+/* overlay for readability */
+.hero-overlay{
+    position:absolute;
+    inset:0;
+    background:linear-gradient(to right, rgba(0,0,0,0.85), rgba(0,0,0,0.4));
+    z-index:-1;
+}
+
+
+/* ================= SECTIONS ================= */
+section{
+    padding:80px 40px;
+    text-align:center;
+    opacity:0;
+    transform:translateY(40px);
+    transition:0.7s ease;
+}
+
+section.show{
+    opacity:1;
+    transform:translateY(0);
+}
+
+h2{
+    font-size:32px;
+    margin-bottom:20px;
+}
+
+/* ================= CARDS ================= */
+.card-container{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:25px;
+}
+
+.card{
+    width:297px;       /* === 270 was the previous small card width if in case === */
+    background:var(--gray);
+    padding:20px;
+    border-radius:12px;
+    transition:.3s;
+    box-shadow:0 4px 12px rgba(0,0,0,0.05);
+}
+
+.card:hover{
+    transform:translateY(-10px);
+}
+
+
+
+
+/* ============= ABOUT US CSS =============== */
+
+.about-card{
+    max-width:1271px;      /* === 1159 was the previous small card width if in case === */
+    margin:30px auto 0;
+    background:var(--card-bg, #e0e0e0);
+    padding:35px;
+    border-radius:12px;
+    box-shadow:0 8px 25px rgba(0,0,0,0.08);
+    text-align:left;
+    line-height:1.8;
+    transition:0.3s;
+}
+
+/* paragraphs spacing */
+.about-card p{
+    margin-bottom:15px;
+    font-size:15px;
+    color:#444;
+}
+
+/* hover effect */
+.about-card:hover{
+    transform:translateY(-5px);
+    box-shadow:0 12px 30px rgba(0,0,0,0.12);
+}
+
+
+/* About Us Heading Design */
+.brand-title span{
+    color:red;
+    font-weight:700;
+}
+
+
+
+/* ================= CONTACT ================= */
+.contact-container{
+    max-width:1159px;      /* === 1159 was the previous width if in case === */
+    margin:auto;
+}
+
+.contact-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:30px;
+    align-items:start;
+}
+
+
+.contact-info{
+    background:#e0e0e0;
+    padding:49px;
+    border-radius:12px;
+    text-align:left;
+    line-height:2;
+    transition:0.3s;
+    box-shadow:0 4px 12px rgba(0,0,0,0.05);
+}
+
+/* HOVER EFFECT (MATCHES CARDS) */
+.contact-info:hover{
+    transform:translateY(-10px);
+    box-shadow:0 8px 25px rgba(0,0,0,0.12);
+}
+
+
+/* FLOATING ICONS */
+.social-icons{
+    margin-top:55px;
+    display:flex;
+    gap:17px;
+}
+
+.social-icons a{
+    width:41px;
+    height:41px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border-radius:25%;   /* earlier it was 50% for circle view */
+    background:#fff;
+    color:#333;
+    box-shadow:0 4px 10px rgba(0,0,0,0.1);
+    transition:.3s;
+}
+
+/* INSTAGRAM */
+.social-icons a:nth-child(1):hover{
+    transform:translateY(-5px);
+    background:#d60000;
+    color:#fff;
+}
+
+/* FACEBOOK */
+.social-icons a:nth-child(2):hover{
+    transform:translateY(-5px);
+    background:#1877F2;
+    color:#fff;
+}
+
+/* WHATSAPP */
+.social-icons a:nth-child(3):hover{
+    transform:translateY(-5px);
+    background:#25D366;
+    color:#fff;
+}
+
+/* LINKEDIN */
+.social-icons a:nth-child(4):hover{
+    transform:translateY(-5px);
+    background:#0A66C2;
+    color:#fff;
+}
+
+/* X (TWITTER) */
+.social-icons a:nth-child(5):hover{
+    transform:translateY(-5px);
+    background:#000000;
+    color:#fff;
+}
+
+
+
+.social-icons a{
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* MAP */
+.contact-map{
+    position:relative;
+    transition:0.3s;
+    box-shadow:0 4px 12px rgba(0,0,0,0.05);
+    border-radius:12px;
+}
+
+/* HOVER EFFECT (MATCHING CARDS) */
+.contact-map:hover{
+    transform:translateY(-10px);
+    box-shadow:0 8px 25px rgba(0,0,0,0.12);
+}
+
+
+.contact-map iframe{
+    width:100%;
+    height:350px;
+    border:none;
+    border-radius:12px;
+}
+
+/* ANIMATED PIN */
+.pin{
+    position:absolute;
+    top:45%;
+    left:50%;
+    transform:translate(-50%, -100%);
+    width:20px;
+    height:20px;
+    background:var(--primary);
+    border-radius:50%;
+}
+
+.pin::after{
+    content:"";
+    position:absolute;
+    width:40px;
+    height:40px;
+    top:50%;
+    left:50%;
+    transform:translate(-50%, -50%);
+    border-radius:50%;
+    border:2px solid var(--primary);
+    animation:pulse 1.5s infinite;
+}
+
+@keyframes pulse{
+    0%{transform:translate(-50%,-50%) scale(0.5); opacity:1;}
+    100%{transform:translate(-50%,-50%) scale(2.5); opacity:0;}
+}
+
+
+/* MOBILE VIEW OPTIMIZATION */
+@media(max-width:768px){
+
+    /* STACK CONTACT SECTIONS */
+    .contact-grid{
+        grid-template-columns:1fr;
+        gap:20px;
+    }
+
+    /* CONTACT INFO CARD */
+    .contact-info{
+        padding:5px;
+        text-align:left;
+        border-radius:12px;
+    }
+
+    /* MAP ADJUSTMENT */
+    .contact-map iframe{
+        height:250px;
+        border-radius:12px;
+    }
+
+    /* SOCIAL ICONS CENTER (OPTIONAL CLEAN LOOK) */
+    .social-icons{
+        justify-content:center; /* flex-start */
+        flex-wrap:wrap;
+        margin-top:25px;
+    }
+}
+
+
+.qr-card{
+    grid-column: 1 / -1; /* makes it full width */
+    text-align:center;
+}
+
+.qr-img{
+    width:155px;  /*  earlier width:155px; height:155px; */
+    height:155px;
+    margin-top:19px;
+    border-radius:25px;  /* by default earlier value for other qr code was 7px */
+    box-shadow:0 4px 12px rgba(0,0,0,0.1);
+    transition:0.3s;
+}
+
+.qr-img:hover{
+    transform:scale(1.05);
+}
+
+
+/* ========== WHATSAPP ======== */
+
+.whatsapp-float{
+    position:fixed;
+    bottom:35px;
+    right:21px;
+    background:#25D366;
+    color:#fff;
+    width:49px;
+    height:49px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border-radius:50%;
+    font-size:24px;
+    box-shadow:0 4px 10px rgba(0,0,0,0.2);
+    transition:0.3s;
+    text-decoration:none;   /* removes underscore */
+}
+
+/* HOVER EFFECT */
+.whatsapp-float:hover{
+    transform:translateY(-8px) scale(1.05);
+    box-shadow:0 8px 20px rgba(0,0,0,0.25);
+    background:#20c55a; /* slightly richer green */
+}
+
+
+
+/* ================= PROJECTS SLIDER (NEW) ================= */
+
+.project-grid{
+    display:grid;
+    grid-template-columns:repeat(2, 1fr); /* 50% + 50% */
+    gap:00px; /* optional: remove gap for full split look */
+    width:100%;
+}
+
+/* EACH CARD FULL WIDTH INSIDE COLUMN */
+.project-grid .card{
+    width:100%;
+    border-radius:7px; /* optional for clean split look */
+}
+
+/* OPTIONAL spacing between cards */
+.project-grid{
+    gap:23px;
+}
+
+/* MOBILE VIEW */ 
+@media(max-width:768px){
+    .project-grid{
+        grid-template-columns:1fr;
+    }
+}
+
+.slider{
+    position:relative;
+    width:100%;
+    height:400px;
+    overflow:hidden;
+    border-radius:7px 7px 7px 7px;
+    background:#000;   
+}
+
+.slider img{
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    object-fit:cover;          /* KEY FIX */
+    object-position:center;    /* KEY FIX */
+    opacity:0;
+    transition:0.5s ease;
+}
+
+.slider img.active{
+    opacity:1;
+}
+
+.slider img{
+    filter: contrast(1.05) saturate(1.1);
+}
+
+/* ARROWS */
+.slider button{
+    position:absolute;
+    top:50%;
+    transform:translateY(-50%);
+    background:rgba(0,0,0,0.5);
+    color:#fff;
+    border:none;
+    padding:6px 10px;
+    cursor:pointer;
+    border-radius:50%;
+    z-index:2;
+}
+
+.slider .prev{left:10px;}
+.slider .next{right:10px;}
+
+.slider button:hover{
+    background:var(--primary);
+}
+
+
+/* ================= PREMIUM LIGHTBOX ================= */
+
+.lightbox{
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,0.85);
+    backdrop-filter:blur(18px);
+    display:none;
+    justify-content:center;
+    align-items:center;
+    z-index:9999;
+    overflow:hidden;
+    
+}
+
+.lightbox.show{
+    display:flex;
+    animation:fadeIn 0.33s ease;
+}
+
+@keyframes fadeIn{
+    from{opacity:0;}
+    to{opacity:1;}
+}
+
+#counter{
+    position:absolute;
+    top:7px;
+    left:50%;
+    transform:translateX(-50%);
+    color:#fff;
+    font-size:12px;
+    font-weight:normal;
+    background:rgba(0,0,0,0.25);
+    padding:4px 10px;
+    border-radius:14px;
+    backdrop-filter:blur(6px);
+    z-index:20;
+}
+
+/* TOP BAR */
+.lb-top{
+    position:absolute;
+    top:20px;
+    width:100%;
+    display:flex;
+    justify-content:flex-end;
+    padding:0 25px;
+    color:#fff;
+    font-size:18px;
+    z-index:10;
+}
+
+#close{
+    font-size:28px;
+    cursor:pointer;
+    width:38px;
+    height:38px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border-radius:50%;
+    background:rgba(255,255,255,0.12);
+    backdrop-filter:blur(10px);
+    transition:0.25s ease;
+    color:#fff;
+    user-select:none;
+}
+
+/* HOVER EFFECT */
+#close:hover{
+    background:rgba(255,255,255,0.25);
+    transform:scale(1.1) rotate(90deg);
+    box-shadow:0 6px 18px rgba(0,0,0,0.4);
+}
+
+/* ACTIVE CLICK FEEL */
+#close:active{
+    transform:scale(0.95) rotate(90deg);
+}
+
+/* IMAGE AREA */
+.lb-stage{
+    width:90%;
+    height:80%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+#lightbox-img{
+    max-width:100%;
+    max-height:100%;
+    border-radius:7px;
+    transition:transform 0.39s ease;
+    cursor:grab;
+    user-select:none;
+}
+
+/* ARROWS */
+.lb-prev, .lb-next{
+    position:absolute;
+    top:50%;
+    transform:translateY(-50%);
+    background:rgba(255,255,255,0.15);
+    border:none;
+    color:#fff;
+    font-size:26px;
+    padding:10px 14px;
+    cursor:pointer;
+    border-radius:50%;
+    transition:0.3s;
+}
+
+.lb-prev{left:20px;}
+.lb-next{right:20px;}
+
+.lb-prev:hover, .lb-next:hover{
+    background:rgba(255,255,255,0.3);
+}
+
+/* EXIT ANIMATION  */
+
+.lightbox{
+    opacity:1;
+    transform:scale(1);
+    transition:opacity 0.39s ease, transform 0.39s ease, backdrop-filter 0.39s ease;
+}
+
+.lightbox.hide{
+    opacity:0;
+    transform:scale(1.05);
+    backdrop-filter:blur(0px);
+}
+
+/* IMAGE ZOOM OUT FEEL */
+.lb-stage img{
+    transition:transform 0.39s ease, opacity 0.39s ease;
+}
+
+
+
+/* ================= FOOTER ================= */
+footer{
+    background:#242424;
+    color:#fff;
+    text-align:center;
+    padding:3px;
+   font-size: 13px; /* adjust as needed */
+}
+
+/* ================= MOBILE ================= */
+@media(max-width:768px){
+    nav{
+        position:absolute;
+        top:65px;
+        right:0;
+        background:#fff;
+        flex-direction:column;
+        width:131px;
+        display:none;
+        border:1px solid #eee;
+        
+    }
+
+
+
+    nav.active{display:flex;}
+
+    .menu-toggle{display:block;}
+
+    .hero h1{font-size:32px;}
+
+    .contact-grid{
+        grid-template-columns:1fr;
+    }
+
+ nav a{
+        margin:0;
+        padding:7px 7px; /* adds breathing space */
+    }
+
+    nav a:last-child{
+        border-bottom:none;
+    }
+
+}
+</style>
+</head>
+
+
+<body>
+
+<div id="menu-overlay"></div>
+
+<!-- ================= LOADER ================= -->
+<div id="loader">
+    <div class="loader-box">
+        <div class="circle"></div>
+        <h3>D D C</h3>
+    </div>
+</div>
+
+<!-- ================= HEADER ================= -->
+<header>
+    <img src="logo/logo.png" class="logo-img">
+
+    <div class="menu-toggle" onclick="toggleMenu(event)">
+        <i class="fas fa-bars"></i>
+    </div>
+
+    <nav id="nav">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+    </nav>
+</header>
+
+<!-- ================= HERO ================= -->
+<section class="hero" id="home">
+
+    <!-- VIDEO BACKGROUND -->
+    <video autoplay muted loop playsinline class="hero-video">
+        <source src="hero/vid1.mp4" type="video/mp4">
+    </video>
+
+    <!-- DARK OVERLAY -->
+    <div class="hero-overlay"></div>
+
+    <h1>Durable Design & Constructions</h1>
+    <p>Building Strong Foundations for the Future</p>
+    <button class="btn btn-primary" onclick="document.getElementById('about').scrollIntoView()">Explore</button>
+</section>
+
+<!-- ================= ABOUT ================= -->
+<section id="about">
+
+<h2 class="brand-title">
+    <span>D</span>urable 
+    <span>D</span>esign & 
+    <span>C</span>onstructions
+</h2>
+
+    <div class="about-card">
+
+        <p>We are a multi-disciplinary construction and civil works startup specializing in construction, interior design, painting, flooring, consulting, and end-to-end building development. With years of hands-on experience in the construction and civil engineering industry, we bring together technical expertise, skilled craftsmanship, and a commitment to quality that ensures every project is delivered with excellence.</p>
+
+        <p>Our services cover a wide range of solutions including residential and commercial building construction, apartment development, interior and exterior design, painting works, flooring solutions, and professional construction consulting. Whether it is a small renovation or a large-scale development project, we focus on delivering durable structures, modern designs, and cost-effective solutions tailored to our clients’ needs.</p>
+
+        <p>We believe in transparency, timely delivery, and customer satisfaction. Our team works closely with clients from planning and design to execution and finishing, ensuring every detail is handled with precision and care.</p>
+
+        <p>Driven by innovation and strong industry experience, we aim to build spaces that are not only strong and functional but also visually appealing and value-enhancing. Your vision is our responsibility, and we are committed to turning ideas into reality with trust and quality at the core of everything we do.</p>
+
+    </div>
+</section>
+
+<!-- ================= SERVICES ================= -->
+<section id="services">
+    <h2>Services</h2>
+
+    <div class="card-container">
+
+        <div class="card service-card">
+            <i class="fas fa-drafting-compass"></i>
+            <h3>Design</h3>
+            <p>Creative and modern house, Interior and building designs tailored to your needs. We also proviede services in 3D design and development</p>
+        </div>
+
+        <div class="card service-card">
+            <i class="fas fa-draw-polygon"></i>
+            <h3>Architecture</h3>
+            <p>Structural planning with smart and sustainable solutions.</p>
+        </div>
+
+        <div class="card service-card">
+            <i class="fas fa-hard-hat"></i>
+            <h3>Construction</h3>
+            <p>High-quality construction with strong foundations and durability.</p>
+        </div>
+
+        <div class="card service-card">
+            <i class="fas fa-paint-roller"></i>
+            <h3>Finishing</h3>
+            <p>Premium interior and exterior finishing for a polished look including painting and flooring.</p>
+        </div>
+
+        <div class="card service-card">
+            <i class="fas fa-handshake"></i>
+            <h3>Consulting</h3>
+            <p>Expert guidance for planning, budgeting, and execution.</p>
+        </div>
+
+        <div class="card service-card">
+            <i class="fas fa-tasks"></i>
+            <h3>Project Management</h3>
+            <p>Small and large scale Project Management, Project Planning & Design, Allocate manpower, machinery and materials, Budgeting & Cost Control</p>
+        </div>
+
+    </div>
+</section>
+
+
+<!-- ================= PROJECTS ================= -->
+
+<section id="projects">
+<h2>Projects</h2>
+
+    <div class="card-container project-grid">
+
+        <div class="card project-card">
+            <div class="slider">
+                <img src="project/3D/a.jpeg" class="active">
+                <img src="project/3D/b.jpeg">
+                <img src="project/3D/c.jpeg">
+                <img src="project/3D/d.jpeg">
+                <img src="project/3D/e.jpeg">
+                <img src="project/3D/f.jpeg">
+                <img src="project/3D/g.jpeg">
+                <img src="project/3D/h.jpeg">
+                <img src="project/3D/i.jpeg">
+                <img src="project/3D/j.jpeg">
+                <img src="project/3D/k.jpeg">
+                <img src="project/3D/l.jpeg">
+                <img src="project/3D/m.jpeg">
+                <img src="project/3D/n.jpeg">
+                <img src="project/3D/o.jpeg">
+                <img src="project/3D/p.jpeg">
+                <img src="project/3D/q.jpeg">
+                <img src="project/3D/r.jpeg">
+                <img src="project/3D/s.jpeg">
+                <img src="project/3D/t.jpeg">
+                <img src="project/3D/u.jpeg">
+                <img src="project/3D/v.jpeg">
+                <img src="project/3D/w.jpeg">
+                <img src="project/3D/x.jpeg">
+                <img src="project/3D/y.jpeg">
+                <img src="project/3D/z.jpeg">
+                <img src="project/3D/1.jpeg">
+                <img src="project/3D/2.jpeg">
+                <img src="project/3D/3.jpeg">
+                <img src="project/3D/4.jpeg">
+                <img src="project/3D/5.jpeg">
+                <img src="project/3D/6.jpeg">
+                <img src="project/3D/7.jpeg">
+                <img src="project/3D/8.jpeg">
+                <img src="project/3D/9.jpeg">
+                <img src="project/3D/10.jpeg">
+                <img src="project/3D/11.jpeg">
+                <img src="project/3D/12.jpeg">
+                <img src="project/3D/13.jpeg">
+                <img src="project/3D/14.jpeg">
+                <img src="project/3D/15.jpeg">
+                <img src="project/3D/16.jpeg">
+                <img src="project/3D/17.jpeg">
+                <img src="project/3D/18.jpeg">
+                <img src="project/3D/19.jpeg">
+                <img src="project/3D/20.jpeg">
+                <img src="project/3D/21.jpeg">
+                <img src="project/3D/22.jpeg">
+                <img src="project/3D/23.jpeg">
+                <img src="project/3D/24.jpeg">
+                <button class="prev">&#10094;</button>
+                <button class="next">&#10095;</button>
+            </div>
+            <h3>3D</h3>
+        </div>
+
+        <div class="card project-card">
+            <div class="slider">
+                <img src="project/interior/4.jpeg" class="active">
+                <img src="project/interior/2.jpeg">
+                <img src="project/interior/3.jpeg">
+                <img src="project/interior/1.jpeg">
+                <img src="project/interior/5.jpeg">
+                <img src="project/interior/6.jpeg">
+                <img src="project/interior/7.jpeg">
+                <img src="project/interior/8.jpeg">
+                <img src="project/interior/9.jpeg">
+                <img src="project/interior/10.jpeg">
+                <img src="project/interior/11.jpeg">
+                <img src="project/interior/12.jpeg">
+                <img src="project/interior/13.jpeg">
+                <img src="project/interior/14.jpeg">
+                <img src="project/interior/15.jpeg">
+                <img src="project/interior/16.jpeg">
+                <img src="project/interior/17.jpeg">
+                <img src="project/interior/18.jpeg">
+                <img src="project/interior/19.jpeg">
+                <img src="project/interior/20.jpeg">
+                <button class="prev">&#10094;</button>
+                <button class="next">&#10095;</button>
+            </div>
+            <h3>Interior</h3>
+        </div>
+
+        <div class="card project-card">
+            <div class="slider">
+                <img src="project/residential/1.jpeg" class="active">
+                <img src="project/residential/2.jpeg">
+                <img src="project/residential/3.jpeg">
+                <img src="project/residential/4.jpeg">
+                <img src="project/residential/5.jpeg">
+                <img src="project/residential/6.jpeg">
+                <img src="project/residential/7.jpeg">
+                <img src="project/residential/8.jpeg">
+                <img src="project/residential/9.jpeg">
+                <img src="project/residential/10.jpeg">
+                <img src="project/residential/11.jpeg">
+                <img src="project/residential/12.jpeg">
+                <button class="prev">&#10094;</button>
+                <button class="next">&#10095;</button>
+            </div>
+            <h3>Residential</h3>
+        </div>
+
+        <div class="card project-card">
+            <div class="slider">
+                <img src="project/commercial/1.jpeg" class="active">
+                <img src="project/commercial/2.jpeg">
+                <img src="project/commercial/3.jpeg">
+                <img src="project/commercial/4.jpeg">
+                <img src="project/commercial/5.jpeg">
+                <img src="project/commercial/6.jpeg">
+                <img src="project/commercial/7.jpeg">
+                <img src="project/commercial/8.jpeg">
+                <img src="project/commercial/9.jpeg">
+                <img src="project/commercial/10.jpeg">
+                <button class="prev">&#10094;</button>
+                <button class="next">&#10095;</button>
+            </div>
+            <h3>Commercial</h3>
+        </div>
+
+    </div>
+</section>
+
+
+<!-- ================= PREMIUM LIGHTBOX ================= -->
+<div id="lightbox" class="lightbox">
+
+    <div class="lb-top">
+        <span id="counter">1 / 1</span>
+        <span id="close">&times;</span>
+    </div>
+
+    <div class="lb-stage">
+        <img id="lightbox-img" src="" alt="">
+    </div>
+
+    <button class="lb-prev">&#10094;</button>
+    <button class="lb-next">&#10095;</button>
+
+</div>
+
+<!-- ================= CONTACT ================= -->
+<section id="contact">
+    <h2>Contact Us</h2>
+
+    <div class="contact-container">
+        <div class="contact-grid">
+
+            <div class="contact-info">
+                <p><strong>Address:</strong> Mithanpura Chowk, Muzaffarpur, Bihar-842002, INDIA.</p>
+                <p><strong>Landmark:</strong> Aditya Vision Market</p>
+                <p><strong>Phone:</strong> +91 92415 66029, 89690 44498</p>
+                <p><strong>Email:</strong> ddc.india26@gmail.com</p>
+
+                <div class="social-icons">
+                    <a href="https://www.instagram.com/ddc.india26/" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.facebook.com/share/1D1ejSDFPx/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://wa.me/918969044498?text=Hello%20DDC%2C%20I%20want%20to%20know%20more%20about%20your%20services"  target="_blank"  rel="noopener noreferrer">
+                         <i class="fab fa-whatsapp"></i></a>
+                    <a href="https://www.linkedin.com/login/?trk=guest_homepage-basic_nav-header-signin" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://x.com/i/flow/login" target="_blank"><i class="fab fa-x"></i></a>
+                </div>
+            </div>
+
+            <div class="contact-map">
+                <iframe 
+    src="https://maps.google.com/maps?q=26.10573897716308,85.39800305804457&z=17&output=embed"
+    style="width:100%; height:350px; border:0; border-radius:12px;"
+    loading="lazy">
+</iframe>
+                <div class="pin"></div>
+            </div>
+            
+            <div class="contact-info qr-card">
+            <h3>Google Business Profile</h3>
+            <p>Scan to view our business profile</p>
+            <img src="contact/QR-Code-Google-Business-Profile.png" alt="QR Code" class="qr-img">
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+
+<!-- ======== WHATSAPP INTEGRATION ======  -->
+
+
+<a href="https://wa.me/919241566029?text=Hello%20DDC%2C%20I%20want%20to%20know%20more%20about%20your%20services" class="whatsapp-float" class="whatsapp-icon" target="_blank">
+    <i class="fa-brands fa-whatsapp fa-lg"></i>
+</a>
+
+
+<!-- ================= FOOTER ================= -->
+<footer>
+   Copyright © 2026 DDC | Durable Design & Constructions - All Rights Reserved.
+</footer>
+
+<script>
+
+/* ================= LOADER ================= */
+window.addEventListener("load", function(){
+    setTimeout(()=>{
+        document.getElementById("loader").classList.add("hide");
+    }, 1200);
+});
+
+/* ================= MENU ================= */
+function toggleMenu(e){
+    e.stopPropagation();
+    document.getElementById("nav").classList.toggle("active");
+}
+
+document.addEventListener("click", function(e){
+    const nav = document.getElementById("nav");
+    const toggle = document.querySelector(".menu-toggle");
+
+    if(nav.classList.contains("active")){
+        if(!nav.contains(e.target) && !toggle.contains(e.target)){
+            nav.classList.remove("active");
+        }
+    }
+});
+
+
+document.querySelectorAll("#nav a").forEach(link => {
+    link.addEventListener("click", () => {
+        document.getElementById("nav").classList.remove("active");
+    });
+});
+
+/* ================= SCROLL ANIMATION ================= */
+const sections = document.querySelectorAll("section");
+
+const observer = new IntersectionObserver(entries=>{
+    entries.forEach(entry=>{
+        if(entry.isIntersecting){
+            entry.target.classList.add("show");
+        }
+    });
+},{threshold:0.15});
+
+sections.forEach(sec=>observer.observe(sec));
+
+/* ================= SLIDER (UNCHANGED + SAFE) ================= */
+document.querySelectorAll(".slider").forEach(slider => {
+
+    const images = slider.querySelectorAll("img");
+    const prev = slider.querySelector(".prev");
+    const next = slider.querySelector(".next");
+
+    let index = 0;
+
+    function show(i){
+        images.forEach(img => img.classList.remove("active"));
+        images[i].classList.add("active");
+    }
+
+    next.addEventListener("click", (e) => {
+        e.stopPropagation();
+        index = (index + 1) % images.length;
+        show(index);
+    });
+
+    prev.addEventListener("click", (e) => {
+        e.stopPropagation();
+        index = (index - 1 + images.length) % images.length;
+        show(index);
+    });
+
+    // swipe
+    let startX = 0;
+
+    slider.addEventListener("touchstart", e => {
+        startX = e.touches[0].clientX;
+    });
+
+    slider.addEventListener("touchend", e => {
+        let endX = e.changedTouches[0].clientX;
+
+        if(startX - endX > 50){
+            index = (index + 1) % images.length;
+        } else if(endX - startX > 50){
+            index = (index - 1 + images.length) % images.length;
+        }
+
+        show(index);
+    });
+
+});
+
+
+/* ================= GALLERY PREMIUM LIGHTBOX SAFE LIGHTBOX  ================= */
+
+/* ================= PREMIUM LIGHTBOX SYSTEM ================= */
+
+const lightbox = document.getElementById("lightbox");
+const imgBox = document.getElementById("lightbox-img");
+const counter = document.getElementById("counter");
+const closeBtn = document.getElementById("close");
+const nextBtn = document.querySelector(".lb-next");
+const prevBtn = document.querySelector(".lb-prev");
+
+const imgs = Array.from(document.querySelectorAll(".slider img"));
+document.getElementById("close").addEventListener("click", close);
+
+let index = 0;
+
+/* ================= OPEN ================= */
+imgs.forEach((img, i) => {
+    img.addEventListener("click", () => {
+        index = i;
+        open();
+    });
+});
+
+function open(){
+    lightbox.classList.add("show");
+    load();
+}
+
+/* ================= CLOSE ================= */
+function close(){
+    const img = document.getElementById("lightbox-img");
+
+    // safety check (prevents breaking)
+    if(!lightbox) return;
+
+    // add exit animation
+    lightbox.classList.add("hide");
+
+    // soft image zoom-out effect
+    if(img){
+        img.style.transform = "scale(0.9)";
+        img.style.opacity = "0.4";
+    }
+
+    // close after animation
+    setTimeout(() => {
+        lightbox.classList.remove("show");
+        lightbox.classList.remove("hide");
+
+        // reset image
+        if(img){
+            img.style.transform = "";
+            img.style.opacity = "";
+        }
+    }, 350);
+}
+
+/* ================= IMAGE UPDATE ================= */
+function load(){
+    imgBox.src = imgs[index].src;
+    resetTransform();
+    counter.textContent = `${index + 1} / ${imgs.length}`;
+}
+
+/* ================= NAV ================= */
+nextBtn.addEventListener("click", () => {
+    index = (index + 1) % imgs.length;
+    load();
+});
+
+prevBtn.addEventListener("click", () => {
+    index = (index - 1 + imgs.length) % imgs.length;
+    load();
+});
+
+/* ================= KEYBOARD ================= */
+document.addEventListener("keydown", (e) => {
+    if(!lightbox.classList.contains("show")) return;
+
+    if(e.key === "ArrowRight") nextBtn.click();
+    if(e.key === "ArrowLeft") prevBtn.click();
+    if(e.key === "Escape") close();
+});
+
+/* ================= ZOOM + PAN ================= */
+
+let scale = 1;
+let x = 0;
+let y = 0;
+let dragging = false;
+let sx = 0;
+let sy = 0;
+
+/* APPLY */
+function apply(){
+    imgBox.style.transform = `translate(${x}px, ${y}px) scale(${scale})`;
+}
+
+/* RESET */
+function resetTransform(){
+    scale = 1;
+    x = 0;
+    y = 0;
+    apply();
+}
+
+/* ================= MOUSE WHEEL ZOOM ================= */
+imgBox.addEventListener("wheel", (e) => {
+    e.preventDefault();
+
+    const delta = e.deltaY < 0 ? 0.15 : -0.15;
+
+    scale += delta;
+    scale = Math.min(Math.max(1, scale), 4);
+
+    apply();
+}, { passive:false });
+
+/* ================= DRAG ================= */
+imgBox.addEventListener("mousedown", (e) => {
+    dragging = true;
+    sx = e.clientX - x;
+    sy = e.clientY - y;
+});
+
+window.addEventListener("mousemove", (e) => {
+    if(!dragging) return;
+
+    x = e.clientX - sx;
+    y = e.clientY - sy;
+
+    apply();
+});
+
+window.addEventListener("mouseup", () => {
+    dragging = false;
+});
+
+/* ================= PINCH TOUCH ================= */
+let dist = 0;
+
+imgBox.addEventListener("touchstart", (e) => {
+
+    if(e.touches.length === 2){
+        dist = getDist(e.touches[0], e.touches[1]);
+    }
+
+    if(e.touches.length === 1){
+        dragging = true;
+        sx = e.touches[0].clientX - x;
+        sy = e.touches[0].clientY - y;
+    }
+
+});
+
+imgBox.addEventListener("touchmove", (e) => {
+
+    if(e.touches.length === 2){
+
+        let newDist = getDist(e.touches[0], e.touches[1]);
+
+        scale *= newDist / dist;
+
+        scale = Math.min(Math.max(1, scale), 4);
+
+        dist = newDist;
+
+        apply();
+    }
+
+    if(e.touches.length === 1 && dragging){
+
+        x = e.touches[0].clientX - sx;
+        y = e.touches[0].clientY - sy;
+
+        apply();
+    }
+
+});
+
+imgBox.addEventListener("touchend", () => {
+    dragging = false;
+});
+
+/* DISTANCE */
+function getDist(t1, t2){
+    return Math.hypot(
+        t2.clientX - t1.clientX,
+        t2.clientY - t1.clientY
+    );
+}
+
+/* ===== MOBILE VIEW VIDEO PLAYBACK STOP ISSUE RESOLVE ====== */
+window.addEventListener("load", () => {
+    const video = document.querySelector(".hero-video");
+
+    if(video){
+        video.muted = true;
+        video.playsInline = true;
+
+        const playPromise = video.play();
+
+        if(playPromise !== undefined){
+            playPromise.catch(() => {
+                // fallback: try again after user interaction
+                document.body.addEventListener("touchstart", () => {
+                    video.play();
+                }, { once:true });
+            });
+        }
+    }
+});
+
+</script>
+
+</body>
+</html>
